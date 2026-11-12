@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mode Gelap</title>
+  <style>
+    body { font-family: Arial; padding: 30px; background: white; color: black; }
+    .box { background: #eee; padding: 15px; margin: 15px 0; border-radius: 5px; }
+    
+    /* Kelas Gelap */
+    body.gelap { background: #222; color: #fff; }
+    body.gelap .box { background: #333; }
+  </style>
+</head>
+<body>
+  <h1>Profil Sekolah</h1>
+  <div class="box">
+    <p>Ini adalah kotak informasi sekolah.</p>
+  </div>
+  <button id="btnTema">Mode Gelap</button>
+
+  <script>
+    const btnTema = document.getElementById('btnTema');
+
+    btnTema.addEventListener('click', () => {
+      document.body.classList.toggle('gelap');
+      const isGelap = document.body.classList.contains('gelap');
+      btnTema.textContent = isGelap ? 'Mode Terang' : 'Mode Gelap';
+    });
+  </script>
+</body>
+</html>

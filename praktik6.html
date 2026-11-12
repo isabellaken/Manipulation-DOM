@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Belanja Sederhana</title>
+</head>
+<body>
+
+  <h2>Daftar Belanja</h2>
+  
+  <input type="text" id="inputBarang" placeholder="Nama barang...">
+  <button id="btnTambah">Tambah</button>
+
+  <ul id="daftarBelanja"></ul>
+
+  <script>
+
+    const inputBarang = document.getElementById('inputBarang');
+    const btnTambah = document.getElementById('btnTambah');
+    const daftarBelanja = document.getElementById('daftarBelanja');
+
+    btnTambah.addEventListener('click', () => {
+  
+      if (inputBarang.value === '') {
+        alert('Nama barang tidak boleh kosong!');
+        return;
+      }
+
+      const li = document.createElement('li');
+      
+      li.textContent = inputBarang.value;
+
+      daftarBelanja.appendChild(li);
+      inputBarang.value = '';
+    });
+  </script>
+
+</body>
+</html>
